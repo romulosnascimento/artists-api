@@ -98,24 +98,33 @@
     },
     "definitions": {
         "Artist": {
-            "required": [
-                "id",
-                "name"
-            ],
             "properties": {
                 "id": {
                     "type": "string",
                     "uniqueItems": true
                 },
                 "name": {
-                    "type": "string",
-                    "uniqueItems": true
+                    "type": "string"
+                },
+                "genres": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "image_url": {
+                    "type": "string"
+                },
+                "spotify_url": {
+                    "type": "string"
                 }
             }
         },
         "Artists": {
             "type": "array",
-            "$ref": "#/definitions/Artist"
+            "items": {
+              "$ref": "#/definitions/Artist"
+            }
         }
     }
 }
